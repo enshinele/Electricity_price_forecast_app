@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  Group10WebApp:
+    image: gitlab.ldv.ei.tum.de:5005/ami2021/group10/group10image1:latest
+    container_name: group10webapp
+    volumes:
+      - ./web
+    ports:
+      - 8501:8501
+
+  Group10Client:
+    image: gitlab.ldv.ei.tum.de:5005/ami2021/group10/group10image2:latest
+    container_name: group10client
+    volumes:
+      - ./client
+    ports:
+      - 8080:8080

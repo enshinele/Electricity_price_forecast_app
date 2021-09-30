@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  Group10WebApp:
+    image: group10_predictor
+    container_name: group10pred
+    build:
+      context: ./web
+    volumes:
+      - ./web
+    ports:
+      - 8501:8501
+
+  Group10Client:
+    image: group10_reader
+    container_name: group10read
+    build:
+      context: ./client
+    volumes:
+      - ./client
+    ports:
+      - 8080:8080
